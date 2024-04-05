@@ -30,17 +30,17 @@ jobs:
       run: |
         npm install
         npm run build
-    
+
     # main site
-    - uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete --cache-control max-age=300
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'eu-central-1'
-        SOURCE_DIR: 'public/appBin'
+    # - uses: jakejarvis/s3-sync-action@master
+    #   with:
+    #     args: --acl public-read --follow-symlinks --delete --cache-control max-age=300
+    #   env:
+    #     AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+    #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     AWS_REGION: 'eu-central-1'
+    #     SOURCE_DIR: 'public/appBin'
 
     # city sites
     - uses: jakejarvis/s3-sync-action@master
@@ -124,7 +124,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-central-1'
         SOURCE_DIR: 'public/appBin'
-    
+
     # conf sites
     - uses: jakejarvis/s3-sync-action@master
       with:
