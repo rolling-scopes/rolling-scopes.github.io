@@ -34,7 +34,7 @@ jobs:
       #main site
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --follow-symlinks --delete --cache-control max-age=300
+          args: --follow-symlinks --delete --cache-control max-age=300
         env:
           SOURCE_DIR: "public/appBin"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
